@@ -8,7 +8,7 @@ int main() {
     cout << "Hello, World!" << endl;
 
     // Division par zéro intentionnelle
-    int a = 10;
+    int a = 11;
     int b = 0;
     int c = a / b;
 
