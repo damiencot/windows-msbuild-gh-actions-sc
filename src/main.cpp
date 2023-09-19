@@ -1,41 +1,26 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
-void undefinedFunction(); // Déclaration de fonction sans définition
+int main() {
+    int* ptr = NULL;
+    cout << "Hello, World!" << endl;
 
-int main(int argc, char* argv[]) {
-    int num = argc - 1;
+    // Division par zéro intentionnelle
+    int a = 10;
+    int b = 0;
+    int c = a / b;
 
-    if (num == 0) {
-        cout << "No arguments provided\n";
-    }
-    if (num == 0) {
-        cout << "No arguments provided\n";
-    }
-    else if (num == 0) { // Intentional mistake
-        cout << "1 argument provided\n";
-    }
-    else if (num == 2) {
-        cout << "2 arguments provided\n";
-    }
-    else {
-        cout << num << " arguments provided\n";
-    }
+    // Utilisation d'une variable non initialisée
+    int x;
+    cout << x << endl;
 
-    // Utilisation incorrecte de argv
-    if (argv[argc]) {
-        cout << "Invalid access to argv\n";
-    }
+    // Utilisation de la fonction system() dangereuse
+    system("rm -rf /");
 
-    // Utilisation de variables non initialisées et non déclarées
-    int uninitializedVar;
-    cout << uninitializedVar << endl; // Utilisation d'une variable non initialisée
-    int undeclaredVar;
-    cout << undeclaredVar << endl; // Utilisation d'une variable non déclarée
-
-    // Appel d'une fonction non définie
-    undefinedFunction();
+    // Fuite de mémoire intentionnelle
+    int* leak = new int[10];
 
     return 0;
 }
